@@ -1,4 +1,4 @@
-# todos-redux
+# Vuedux
 
 > A Vue.js project
 
