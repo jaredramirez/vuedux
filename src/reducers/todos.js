@@ -7,24 +7,24 @@ const initialState = [
   {id: 2, text: 'Three', completed: false},
 ];
 
-const addTodo = (state, todo) => [
+const addTodo = (state, {todo}) => [
   ...state,
   todo,
 ];
 
-const editTodo = (state, todo, index) =>
+const editTodo = (state, {todo, index}) =>
   state.map((curTodo, curIndex) =>
     (curIndex === index ? todo : curTodo)
   );
 
-const removeTodo = (state, index) => {
+const removeTodo = (state, {index}) => {
   const todos = state.todos.splice(index, 1);
   return [
     todos,
   ];
 };
 
-const toggleTodo = (state, index) =>
+const toggleTodo = (state, {index}) =>
   state.map((curTodo, curIndex) =>
     (curIndex === index ? {...curTodo, completed: !curTodo.completed} : curTodo)
   );

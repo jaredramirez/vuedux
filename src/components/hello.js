@@ -19,29 +19,20 @@ const Hello = {
     return (
       <div style={styles.container}>
         <span>{this.text}</span>
-        <span>{this.title}</span>
         <input
           type='button'
           value='change'
           onClick={() => this.actions.editName('new')}
         />
-        {this.list.map((todo, key) => <span key={key}>{todo.text}</span>)}
+        <span>{this.name}</span>
         <input
           type='button'
           value='add'
           onClick={() => this.actions.addTodo({text: 'Another', completed: false})}
         />
+        {this.todos.map((todo, key) => <span key={key}>{todo.text}</span>)}
       </div>
     );
-  },
-  computed: {
-    title() {
-      return this.name;
-    },
-    list() {
-      console.log('computed', this.todos);
-      return [...this.todos];
-    },
   },
 };
 
