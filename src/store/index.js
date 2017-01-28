@@ -1,12 +1,11 @@
-// import Vue from 'vue';
-// import Revue from 'revue';
-// import {createStore, bindActionCreators} from 'redux';
 import {createStore} from 'redux';
 import reducer from '../reducers';
-// import * as actionCreators from '../actions';
 
-const reduxStore = createStore(reducer);
-export default reduxStore;
-// const actions = bindActionCreators(actionCreators, reduxStore.dispatch);
-// const store = new Revue(Vue, reduxStore, actions);
-// export default store;
+// const store = createStore(reducer);
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-undef */
+const store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+export default store;

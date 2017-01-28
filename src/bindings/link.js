@@ -1,8 +1,5 @@
 import {inject} from 'vue-expose-inject';
 
-// const initMapStateToProps = (func, store) => {
-// };
-
 // determine method used to declare props
 const transformProps = props => (
   typeof props === typeof []
@@ -19,16 +16,36 @@ export default (mapDispatchToProps, mapStateToProps, component) => ({
   props: {
     ...transformProps(component.props),
   },
+  data() {
+    return {
+      state: null,
+    };
+  },
   render(h) {
-    console.log('link', mapStateToProps(this.store.getState()));
     return h(component, {
       props: {
         ...this.$options.propsData,
-        ...mapStateToProps(this.store.getState()),
+        ...mapStateToProps(this.state, this.$options.propsData),
+        ...mapDispatchToProps(this.store.dispatch, this.$options.propsData),
       },
     });
   },
+  methods: {
+    updateState() {
+      this.state = this.store.getState();
+    },
+  },
   computed: {
     ...inject(['store']),
+  },
+  created() {
+    const {updateState} = this;
+    this.unsubscribe = this.store.subscribe(updateState);
+    updateState();
+  },
+  destroyed() {
+    if (this.unsubscribe) {
+      this.unsubscribe();
+    }
   },
 });
