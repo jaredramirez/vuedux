@@ -5,11 +5,6 @@ module.exports = {
     sourceType: 'module'
   },
   extends: ['airbnb-base'],
-  // required to lint *.vue files
-  plugins: [
-    'html',
-    'react'
-  ],
   // check if imports actually resolve
   'settings': {
     'import/resolver': {
@@ -31,7 +26,5 @@ module.exports = {
     'object-curly-spacing': ['error', 'never'],
     "no-confusing-arrow": ["error", {"allowParens": true}],
     'no-console': ['error', { 'allow': ['log'] } ],
-    "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
   }
 }

@@ -1,6 +1,5 @@
 import {inject} from 'vue-expose-inject';
 
-// determine method used to declare props
 const transformProps = props => (
   typeof props === typeof []
     ? props.reduce((acc, cur) => {
