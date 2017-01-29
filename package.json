@@ -13,12 +13,11 @@
   "scripts": {
     "lint": "node_modules/.bin/eslint index.js src/*.js",
     "build": "node_modules/.bin/webpack --progress --colors -p",
-    "watch": "node_modules/.bin/webpack --progress --colors --watch",
-    "reinstall": "rm -rf node_modules/vue-expose-inject && yarn install"
+    "watch": "node_modules/.bin/webpack --progress --colors --watch"
   },
   "dependencies": {
     "vue": "^2.1.10",
-    "vue-expose-inject": "file:../vue-expose-inject"
+    "vue-expose-inject": "^0.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.22.1",

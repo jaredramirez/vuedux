@@ -1,7 +1,7 @@
 import {bindActionCreators} from 'redux';
 
 import * as todosActionCreators from '../actions/todos';
-import {link} from '../../../../dist/bundle';
+import {connect} from '../../../../dist/bundle';
 
 const styles = {
   container: {
@@ -35,4 +35,4 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default link(mapDispatchToProps, mapStateToProps, List);
+export default connect(mapDispatchToProps, mapStateToProps, List);

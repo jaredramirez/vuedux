@@ -1,7 +1,3 @@
-import Provider from './src/provider';
-import link from './src/link';
+export {default as Provider} from './src/provider';
+export {default as connect} from './src/connect';
 
-export {
-  Provider,
-  link,
-};

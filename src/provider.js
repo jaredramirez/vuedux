@@ -9,11 +9,6 @@ export default {
       required: true,
     },
   },
-  store() {
-    return {
-      store: this.store,
-    };
-  },
   render(h) {
     if (this.$slots.default.length !== 1) {
       throw new Error('Provider should have one child!');

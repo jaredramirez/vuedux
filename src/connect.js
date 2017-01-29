@@ -11,7 +11,7 @@ const transformProps = props => (
 );
 
 export default (mapDispatchToProps, mapStateToProps, component) => ({
-  name: 'Link',
+  name: `connect-${component.name}`,
   props: {
     ...transformProps(component.props),
   },
@@ -29,13 +29,11 @@ export default (mapDispatchToProps, mapStateToProps, component) => ({
       },
     });
   },
+  computed: {...inject(['store'])},
   methods: {
     updateState() {
       this.state = this.store.getState();
     },
-  },
-  computed: {
-    ...inject(['store']),
   },
   created() {
     const {updateState} = this;

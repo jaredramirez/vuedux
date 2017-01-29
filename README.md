@@ -45,7 +45,7 @@ new Vue({
 Just like React-Redux, map your actions and state to the component and they will be passed in as props. 
 ```
 import {bindActionCreators} from 'redux';
-import {link} from 'vuedux';
+import {connect} from 'vuedux';
 
 import * as todosActionCreators from '../actions/todos';
 
@@ -81,7 +81,7 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default link(mapDispatchToProps, mapStateToProps, App);
+export default connect(mapDispatchToProps, mapStateToProps, App);
 ```
 
 ### Examples
@@ -89,4 +89,5 @@ export default link(mapDispatchToProps, mapStateToProps, App);
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)
+
 
