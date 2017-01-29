@@ -1,6 +1,8 @@
 .DS_Store
 node_modules/
-example/todos/node_modules
 dist/
 npm-debug.log
+
+example/todos/node_modules
+example/todos/yarn.lock
 

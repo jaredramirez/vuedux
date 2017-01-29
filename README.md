@@ -1,19 +1,85 @@
-# Vuedux
+## Vuedux
+> Redux bindings for Vue.js, inspired by React-Redux.
 
-> A Vue.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
+### Installation
+```
+yarn add vuedux
+```
+or
+```
+npm i --save vuedux
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
-# vuedux
+### Usage
+**store.js**
+Create your store with redux like normal:
+```
+import {createStore} from 'redux';
+import reducer from '../reducers';
+
+const store = createStore(reducer);
+export default store;
+```
+
+**main.js**
+Inject the store into the top level of your application:
+```
+import Vue from 'vue';
+import {Provider} from 'vuedux';
+
+import App from './App';
+import store from './store';
+
+new Vue({
+  el: '#app',
+  render(h) {
+    return (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    );
+  }, 
+```
+
+**App.js**
+Just like React-Redux, map your actions and state to the component and they will be passed in as props. 
+```
+import {bindActionCreators} from 'redux';
+
+import * as todosActionCreators from '../actions/todos';
+import {link} from '../../../../dist/bundle';
+
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+  },
+};
+
+const App = {
+  name: 'App',
+  // Don't forget to add your state/actions to your component's props
+  props: ['todos', 'actions'],
+  render(h) {
+    return (
+      <div style={styles.container}>
+        {
+        this.todos.map((todo, key) =>
+          <span key={key}>{todo.text}</span>)
+        }
+        <input value='add' onClick={actions.addTodo({text: 'another'})} />
+      </div>
+    );
+  },
+};
+
+const mapDispatchToProps = dispatch => ({
+  actions: bindActionCreators(todosActionCreators, dispatch),
+});
+
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
+
+export default link(mapDispatchToProps, mapStateToProps, App);
+```
