@@ -85,7 +85,8 @@ export default link(mapDispatchToProps, mapStateToProps, App);
 ```
 
 ### Examples
-* [Todos](example/todos)
+* [Todos](examples/todos)
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)
+
