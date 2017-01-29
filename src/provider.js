@@ -2,7 +2,7 @@ import {expose} from 'vue-expose-inject';
 
 export default {
   name: 'Provider',
-  mixins: [expose],
+  extends: expose,
   props: {
     store: {
       type: null,

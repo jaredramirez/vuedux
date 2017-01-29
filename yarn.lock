@@ -2800,9 +2800,8 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-expose-inject@^0.3.1:
+"vue-expose-inject@file:../vue-expose-inject":
   version "0.3.1"
-  resolved "https://registry.yarnpkg.com/vue-expose-inject/-/vue-expose-inject-0.3.1.tgz#38557217180d4c1a816e56722895a68a1f5f9b56"
 
 vue@^2.1.10:
   version "2.1.10"
