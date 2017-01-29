@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 
 module.exports = {
   cache: true,
@@ -22,6 +23,20 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      beautify: false,
+      comments: false,
+      compress: {
+        warnings: false,
+        drop_console: true,
+      },
+      mange: {
+        except: ['webpackJsonp'],
+      },
+    }),
+  ],
   devtool: 'source-map',
   externals: ['vue'],
 };

@@ -3,5 +3,5 @@ import link from './src/link';
 
 export {
   Provider,
-  link
+  link,
 };
