@@ -38,7 +38,8 @@ new Vue({
         <App />
       </Provider>
     );
-  }, 
+  },
+};
 ```
 
 **App.js**
