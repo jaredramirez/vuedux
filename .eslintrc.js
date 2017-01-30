@@ -1,11 +1,8 @@
 module.exports = {
   root: true,
   parser: 'babel-eslint',
-  parserOptions: {
-    sourceType: 'module'
-  },
   extends: ['airbnb-base'],
-  'rules': {
+  rules: {
     'no-unused-vars': ['error', { 'argsIgnorePattern': 'h' }],
     'object-curly-spacing': ['error', 'never'],
     'no-confusing-arrow': ['error', {'allowParens': true}],

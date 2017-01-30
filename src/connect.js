@@ -1,16 +1,10 @@
+// @flow
 import {inject} from 'vue-expose-inject';
 
-const transformProps = props => (
-  typeof props === typeof []
-    ? props.reduce((acc, cur) => {
-      const obj = {...acc};
-      obj[cur] = null;
-      return obj;
-    }, {})
-    : props
-);
+import type {Connect} from './flow-declarations/vuedux';
+import transformProps from './utils';
 
-export default (mapDispatchToProps, mapStateToProps, component) => ({
+const connect: Connect = (mapDispatchToProps, mapStateToProps, component) => ({
   name: `connect-${component.name}`,
   props: {
     ...transformProps(component.props),
@@ -46,3 +40,5 @@ export default (mapDispatchToProps, mapStateToProps, component) => ({
     }
   },
 });
+
+export default connect;

@@ -1,6 +1,8 @@
+// @flow
 import {expose} from 'vue-expose-inject';
+import type {Component} from './flow-declarations/vue';
 
-export default {
+const Provider: Component = {
   name: 'Provider',
   extends: expose,
   props: {
@@ -9,7 +11,7 @@ export default {
       required: true,
     },
   },
-  render(h) {
+  render(h): Component {
     if (this.$slots.default.length !== 1) {
       throw new Error('Provider should have one child!');
     }
@@ -17,3 +19,5 @@ export default {
   },
   expose: ['store'],
 };
+
+export default Provider;

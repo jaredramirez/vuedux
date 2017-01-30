@@ -18,7 +18,10 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['es2015'],
-          plugins: ['transform-object-rest-spread'],
+          plugins: [
+            'transform-object-rest-spread',
+            'transform-flow-strip-types'
+          ],
         },
       },
     ],

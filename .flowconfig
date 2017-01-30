@@ -1,3 +1,6 @@
+[libs]
+<PROJECT_ROOT>/flow-typed/
+
 [ignore]
 <PROJECT_ROOT>/node_modules/
 <PROJECT_ROOT>/examples/
