@@ -18,12 +18,24 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps, component) => ({
     return h(component, {
       props: {
         ...this.$options.propsData,
-        ...mapStateToProps(this.state, this.$options.propsData),
-        ...mapDispatchToProps(this.store.dispatch, this.$options.propsData),
+        ...this.stateToProps,
+        ...this.dispatchToProps,
       },
     });
   },
-  computed: {...inject(['store'])},
+  computed: {
+    ...inject(['store']),
+    stateToProps() {
+      return mapStateToProps
+        ? mapStateToProps(this.state, this.$options.propsData)
+        : {};
+    },
+    dispatchToProps() {
+      return mapDispatchToProps
+        ? mapDispatchToProps(this.store.dispatch, this.$options.propsData)
+        : {};
+    },
+  },
   methods: {
     updateState() {
       this.state = this.store.getState();

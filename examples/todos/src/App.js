@@ -1,11 +1,23 @@
 import List from './components/list';
+import ReadOnlyList from './components/readOnlyList';
+
+const styles = {
+  container: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-around',
+  },
+};
 
 const App = {
   name: 'App',
   funcional: true,
   render: h =>
-    <div>
+    <div style={styles.container}>
       <List />
+      <ReadOnlyList title='Read Only List' />
     </div>,
 };
 

@@ -8,6 +8,16 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
   },
+  sub: {
+    display: 'flex',
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button: {
+    marginLeft: 15,
+  },
 };
 
 const List = {
@@ -16,11 +26,14 @@ const List = {
   render(h) {
     return (
       <div style={styles.container}>
-        <input
-          type='button'
-          value='add'
-          onClick={() => this.actions.addTodo({text: 'Another', completed: false})}
-        />
+        <div style={styles.sub}>
+          <h3 style={{marginRight: '15px'}}>List</h3>
+          <input
+            type='button'
+            value='add'
+            onClick={() => this.actions.addTodo({text: 'Next', completed: false})}
+          />
+        </div>
         {this.todos.map((todo, key) => <span key={key}>{todo.text}</span>)}
       </div>
     );
