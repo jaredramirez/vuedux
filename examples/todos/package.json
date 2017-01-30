@@ -10,11 +10,9 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
-    "eslint-plugin-react": "^6.9.0",
     "redux": "^3.6.0",
-    "revue": "^3.0.0",
     "vue": "^2.1.0",
-    "vue-expose-inject": "^0.3.1"
+    "vuedux": "0.0.3"
   },
   "devDependencies": {
     "autoprefixer": "^6.4.0",
@@ -32,6 +30,7 @@
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.25.0",
     "eslint": "^3.7.1",
+    "eslint-plugin-react": "^6.9.0",
     "eslint-config-airbnb-base": "^8.0.0",
     "eslint-friendly-formatter": "^2.0.5",
     "eslint-import-resolver-webpack": "^0.6.0",
