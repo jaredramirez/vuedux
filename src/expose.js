@@ -1,23 +1,23 @@
 // @flow
 import type {Component} from './flow-declarations/vue';
 
-const ContextRoot: Component = {
-  name: 'ContextRoot',
+const Expose: Component = {
+  name: 'Expose',
   props: {
-    context: {
+    properties: {
       type: Object,
       required: true,
     },
   },
-  render(h): Component {
+  render(h) {
     if (this.$slots.default.length !== 1) {
-      throw new Error('ContextRoot should have one child!');
+      throw new Error('Expose should have one child!');
     }
     return this.$slots.default[0];
   },
   created() {
-    this.$exposed = this.context;
+    this.$exposed = this.properties;
   },
 };
 
-export default ContextRoot;
+export default Expose;
