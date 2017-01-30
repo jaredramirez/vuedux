@@ -1,23 +1,37 @@
 // @flow
-import {expose} from 'vue-expose-inject';
 import type {Component} from './flow-declarations/vue';
+import ContextRoot from './contextRoot';
 
 const Provider: Component = {
   name: 'Provider',
-  extends: expose,
   props: {
     store: {
       type: null,
       required: true,
     },
   },
-  render(h): Component {
+  render(h) {
     if (this.$slots.default.length !== 1) {
       throw new Error('Provider should have one child!');
     }
-    return this.$slots.default[0];
+    return (
+      <ContextRoot context={this.getContext()}>
+      {this.$slots.default[0]}
+      </ContextRoot>
+    );
   },
-  expose: ['store'],
+  methods: {
+    getContext() {
+      return {
+        store: this.store,
+      };
+    },
+  },
+  created() {
+    if (this.expose) {
+      this.$exposed = this.expose.call(this);
+    }
+  },
 };
 
 export default Provider;

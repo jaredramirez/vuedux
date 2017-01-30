@@ -20,7 +20,8 @@ module.exports = {
           presets: ['es2015'],
           plugins: [
             'transform-object-rest-spread',
-            'transform-flow-strip-types'
+            'transform-flow-strip-types',
+            'transform-vue-jsx',
           ],
         },
       },
