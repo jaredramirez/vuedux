@@ -1,6 +1,24 @@
 const path = require('path');
 const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 
+// const uglifyConfigProd = {
+  // sourceMap: true,
+  // beautify: false,
+  // comments: false,
+  // compress: {
+    // warnings: false,
+  // },
+  // mange: {
+    // except: ['webpackJsonp'],
+  // },
+// };
+
+const uglifyConfigDev = {
+  sourceMap: true,
+  beautify: true,
+  comments: true,
+};
+
 module.exports = {
   cache: true,
   entry: './index.js',
@@ -28,18 +46,7 @@ module.exports = {
     ],
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      beautify: false,
-      comments: false,
-      compress: {
-        warnings: false,
-        drop_console: true,
-      },
-      mange: {
-        except: ['webpackJsonp'],
-      },
-    }),
+    new webpack.optimize.UglifyJsPlugin(uglifyConfigDev),
   ],
   devtool: 'source-map',
   externals: ['vue'],
