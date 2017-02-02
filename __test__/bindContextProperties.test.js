@@ -1,18 +1,18 @@
 import Vue from 'vue';
-import Expose from '../src/expose';
-import bindContextProperties from '../src/bindContextProperties';
-import {exposedProperties, mockStore} from './utils';
+import Context from '../src/context';
+import bindContextProperties from '../src/context/bindContextProperties';
+import {contextProperties} from './utils';
 
-const ExposeComponent = Vue.extend(Expose);
+const ContextComponent = Vue.extend(Context);
 
 describe('bindContextProperties', () => {
-  it('should link $exposed to current component', () => {
-    const parent = new ExposeComponent({
-      propsData: {
-        properties: exposedProperties,
-      },
-    });
+  const parent = new ContextComponent({
+    propsData: {
+      properties: contextProperties,
+    },
+  });
 
+  it('should link $context to current component', () => {
     const child = new Vue({
       parent,
       computed: {
@@ -20,23 +20,18 @@ describe('bindContextProperties', () => {
       },
     });
 
-    expect(child.$exposed).toBe(exposedProperties);
+    expect(child.$context).toBe(contextProperties);
   });
 
-  it('should bind properties to current component', () => {
-    const parent = new ExposeComponent({
-      propsData: {
-        properties: exposedProperties,
-      },
-    });
-
-    const child = new Vue({
-      parent,
-      computed: {
-        ...bindContextProperties(['store']),
-      },
-    });
-
-    expect(child.store).toBe(mockStore);
+  it('thow error if requested property does not exist', () => {
+    expect(() => {
+      const child = new Vue({
+        parent,
+        computed: {
+          ...bindContextProperties(['punk']),
+        },
+      });
+      return child.punk;
+    }).toThrow();
   });
 });

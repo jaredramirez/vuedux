@@ -1,8 +1,8 @@
 // @flow
-import {inject} from 'vue-expose-inject';
+// import {inject} from 'vue-expose-inject';
 
 import type {Connect} from './flow-declarations/vuedux';
-import bindContextProperties from './bindContextProperties';
+import bindContextProperties from './context/bindContextProperties';
 import {transformProps} from './utils';
 
 const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
@@ -20,7 +20,6 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
         };
       },
       render(h) {
-        console.log('this', bindContextProperties);
         return h(component, {
           props: {
             ...this.$options.propsData,
@@ -30,8 +29,7 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
         });
       },
       computed: {
-        ...inject(['store']),
-        // ...bindContextProperties,
+        ...bindContextProperties(['store']),
         stateToProps() {
           return mapStateToProps
             ? mapStateToProps(this.state, this.$options.propsData)

@@ -1,6 +1,6 @@
 // @flow
 import type {Component} from './flow-declarations/vue';
-import Expose from './expose';
+import Context from './context';
 
 const Provider: Component = {
   name: 'Provider',
@@ -18,13 +18,13 @@ const Provider: Component = {
       throw new Error('Provider should have one child!');
     }
     return (
-      <Expose properties={this.expose()}>
+      <Context properties={this.context()}>
         {this.$slots.default[0]}
-      </Expose>
+      </Context>
     );
   },
   methods: {
-    expose() {
+    context() {
       return {
         store: this.store,
       };

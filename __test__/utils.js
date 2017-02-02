@@ -12,6 +12,6 @@ export const mockStore = {
   },
 };
 
-export const exposedProperties = {
+export const contextProperties = {
   store: mockStore,
 };
