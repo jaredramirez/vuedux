@@ -16,7 +16,6 @@
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
-  "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
@@ -47,7 +46,7 @@
   "keywords": [
     "vue",
     "redux",
-    "manage",
-    "state"
+    "bindings",
+    "react-redux"
   ]
 }
