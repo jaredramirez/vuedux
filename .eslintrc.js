@@ -11,5 +11,10 @@ module.exports = {
     'import/no-extraneous-dependencies': ['error', {'devDependencies': ['webpack.config.js']}],
     'react/jsx-uses-react': 'error',
     'react/jsx-uses-vars': 'error',
-  }
+  },
+  env: {
+    browser: true,
+    node: true,
+    jest: true
+  },
 }

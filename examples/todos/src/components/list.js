@@ -48,4 +48,5 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default connect(mapDispatchToProps, mapStateToProps, List);
+export default connect(mapDispatchToProps, mapStateToProps)(List);
+

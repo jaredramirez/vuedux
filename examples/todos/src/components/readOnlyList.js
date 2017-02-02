@@ -24,4 +24,4 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default connect(null, mapStateToProps, ReadOnlyList);
+export default connect(null, mapStateToProps)(ReadOnlyList);

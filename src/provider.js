@@ -6,8 +6,11 @@ const Provider: Component = {
   name: 'Provider',
   props: {
     store: {
-      type: null,
+      type: Object,
       required: true,
+      validator(store) {
+        return Boolean(store.subscribe) && Boolean(store.dispatch) && Boolean(store.getState);
+      },
     },
   },
   render(h) {
