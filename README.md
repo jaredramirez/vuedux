@@ -1,5 +1,5 @@
 ## Vuedux
-> Redux bindings for Vue.js, inspired by React-Redux.
+> Familiar Redux bindings for Vue.js, inspired by React-Redux.
 
 ### Installation
 ```
@@ -87,6 +87,9 @@ export default connect(mapDispatchToProps, mapStateToProps, App);
 
 ### Examples
 * [Todos](examples/todos)
+
+### What about Revue?
+[Revue](https://github.com/revue/revue) is another package that also provides Redux bindings. It connects Redux and Vue is though creating a modified Redux `store` and binding the state to every component. Having to modify Redux to fit Vue, and unnecessarily providing each component with the state is an approach I wasn't wild about. Redux should to be independent of Vue and to only provide user-specified components with actions and state variables. So, Vuedux was created to fill those requierments.
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)
