@@ -1,11 +1,11 @@
 import Vue from 'vue';
 import Context from '../src/context';
-import {mockStore} from './utils';
+import mockStore from './mockStore';
 
 const ContextComponent = Vue.extend(Context);
 
-describe('Expose', () => {
-  it('should create $exposed with data from props', () => {
+describe('Context', () => {
+  it('should create $context with data from props', () => {
     const properties = {store: mockStore};
     const vm = new ContextComponent({
       propsData: {
