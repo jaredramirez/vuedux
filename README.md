@@ -82,7 +82,7 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default connect(mapDispatchToProps, mapStateToProps, App);
+export default connect(mapDispatchToProps, mapStateToProps)(App);
 ```
 
 ### Examples
@@ -93,5 +93,4 @@ export default connect(mapDispatchToProps, mapStateToProps, App);
 
 ### License
 [MIT](https://opensource.org/licenses/MIT)
-
 

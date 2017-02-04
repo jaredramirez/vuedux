@@ -12,8 +12,9 @@
     "lint": "node_modules/.bin/eslint index.js src/*.js",
     "test": "node_modules/.bin/jest",
     "test:watch": "node_modules/.bin/jest --watch",
-    "build": "node_modules/.bin/webpack --progress --colors -p",
+    "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
+    "build:prod":  "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p --env.option abc",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
   "devDependencies": {
