@@ -1,7 +1,7 @@
 import {bindActionCreators} from 'redux';
+import {connect} from 'vuedux';
 
 import * as todosActionCreators from '../actions/todos';
-import {connect} from '../../../../dist/vuedux';
 
 const styles = {
   container: {

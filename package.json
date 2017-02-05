@@ -4,7 +4,7 @@
   "description": "Redux bindings for Vue.js, inspired by React-Redux.",
   "author": "jaredramirez <jaredramirez@me.com>",
   "license": "MIT",
-  "entry": "dist/vuedux.js",
+  "main": "dist/vuedux.js",
   "files": [
     "dist/vuedux.js",
     "dist/vuedux.js.map",
