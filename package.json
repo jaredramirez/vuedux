@@ -1,12 +1,14 @@
 {
   "name": "vuedux",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Redux bindings for Vue.js, inspired by React-Redux.",
   "author": "jaredramirez <jaredramirez@me.com>",
   "license": "MIT",
   "entry": "dist/vuedux.js",
   "files": [
-    "dist"
+    "dist/vuedux.js",
+    "dist/vuedux.js.map",
+    "src"
   ],
   "scripts": {
     "lint": "node_modules/.bin/eslint index.js src/*.js",
