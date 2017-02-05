@@ -1,10 +1,10 @@
 {
   "name": "vuedux",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Redux bindings for Vue.js, inspired by React-Redux.",
   "author": "jaredramirez <jaredramirez@me.com>",
   "license": "MIT",
-  "entry": "dist/index.js",
+  "entry": "dist/vuedux.js",
   "files": [
     "dist"
   ],
@@ -14,7 +14,7 @@
     "test:watch": "node_modules/.bin/jest --watch",
     "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
-    "build:prod":  "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p --env.option abc",
+    "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p --env.option abc",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
   "devDependencies": {
