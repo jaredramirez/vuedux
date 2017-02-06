@@ -13,7 +13,7 @@ const addPost = (state = {}, {id, todo}) => ({
 const deletePost = (state = {}, {id}) => _.omit(state, id);
 
 const initialState = {
-  0: {title: 'first post', body: 'hello everyone, this is my fist post!'},
+  0: {title: 'first post', body: 'hello everyone, this is my fist post!', created: 1486349445},
 };
 
 export default createReducer(initialState, {

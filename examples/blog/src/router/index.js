@@ -1,16 +1,29 @@
 import Router from 'vue-router';
 import Vue from 'vue';
 
-import Hello from 'components/Hello';
+import posts from 'containers/posts';
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello,
+      path: '/dashboard',
+      name: 'dashboard',
+      component: posts,
     },
+    {
+      path: '/posts',
+      name: 'posts',
+      component: posts,
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: posts,
+    },
+    {path: '*', redirect: '/dashboard'},
   ],
 });
+
+export default router;

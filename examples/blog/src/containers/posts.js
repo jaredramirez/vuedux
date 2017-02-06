@@ -8,14 +8,14 @@ const styles = {
   },
 };
 
-const Hello = {
-  name: 'Hello',
+const Posts = {
+  name: 'Posts',
   props: ['postsIds'],
   render(h) {
     console.log(this.postsIds);
     return (
       <div style={styles.container}>
-        <span>Hello World</span>
+        <span>Posts World</span>
         {
           this.postsIds.map(curId =>
             <span>{curId}</span>,
@@ -30,4 +30,4 @@ const mapStateToProps = state => ({
   postsIds: state.postsIds,
 });
 
-export default connect(null, mapStateToProps)(Hello);
+export default connect(null, mapStateToProps)(Posts);
