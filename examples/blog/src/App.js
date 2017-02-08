@@ -3,17 +3,22 @@ import Nav from 'containers/nav';
 
 const RouterView = Vue.component('router-view');
 
-const style = {
-  backgroundColor: '#F0F0F0',
-  padding: '15px',
+const styles = {
+  container: {
+    fontFamily: 'Andale Mono, AndaleMono, monospace',
+  },
+  view: {
+    backgroundColor: '#F0F2F8',
+    paddingTop: '3.8em',
+  },
 };
 
 export default {
   name: 'App',
   render: h => (
-    <div>
+    <div style={styles.container}>
       <Nav />
-      <div style={style}>
+      <div style={styles.view}>
         <RouterView />
       </div>
     </div>

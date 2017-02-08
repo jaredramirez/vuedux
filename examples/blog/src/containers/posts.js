@@ -1,24 +1,26 @@
 import {connect} from 'vuedux';
 
+import Post from './post';
+
 const styles = {
   container: {
     display: 'flex',
+    flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
+    padding: '20px',
   },
 };
 
 const Posts = {
-  name: 'Posts',
+  name: 'PostContainer',
   props: ['postsIds'],
   render(h) {
-    console.log(this.postsIds);
     return (
       <div style={styles.container}>
-        <span>Posts World</span>
         {
           this.postsIds.map(curId =>
-            <span>{curId}</span>,
+            <Post id={curId} />,
           )
         }
       </div>

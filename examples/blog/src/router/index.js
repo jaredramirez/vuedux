@@ -1,28 +1,24 @@
 import Router from 'vue-router';
 import Vue from 'vue';
 
-import posts from 'containers/posts';
+import feed from 'containers/feed';
+import profile from 'containers/profile';
 
 Vue.use(Router);
 
 const router = new Router({
   routes: [
     {
-      path: '/dashboard',
-      name: 'dashboard',
-      component: posts,
-    },
-    {
-      path: '/posts',
-      name: 'posts',
-      component: posts,
+      path: '/feed',
+      name: 'feed',
+      component: feed,
     },
     {
       path: '/profile',
       name: 'profile',
-      component: posts,
+      component: profile,
     },
-    {path: '*', redirect: '/dashboard'},
+    {path: '*', redirect: '/feed'},
   ],
 });
 
