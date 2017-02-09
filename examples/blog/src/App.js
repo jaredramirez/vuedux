@@ -9,7 +9,7 @@ const styles = {
   },
   view: {
     backgroundColor: '#F0F2F8',
-    paddingTop: '3.8em',
+    paddingTop: '6em',
   },
 };
 
