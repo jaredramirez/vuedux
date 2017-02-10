@@ -5,11 +5,11 @@
 ## Build Setup
 
 ``` 
-# install dependencies
-npm install
+# in parent directory run 
+yarn build
 
-# serve with hot reload at localhost:8080
+# cd into examples/todos
+npm install
 npm run dev
 ```
-
 

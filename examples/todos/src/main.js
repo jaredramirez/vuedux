@@ -1,5 +1,6 @@
 import Vue from 'vue';
-import {Provider} from 'vuedux';
+
+import {Provider} from './../../../dist/vuedux';
 import App from './App';
 import store from './store';
 

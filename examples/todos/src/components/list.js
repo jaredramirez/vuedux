@@ -1,5 +1,5 @@
 import {bindActionCreators} from 'redux';
-import {connect} from 'vuedux';
+import {connect} from './../../../../dist/vuedux';
 
 import * as todosActionCreators from '../actions/todos';
 
@@ -22,7 +22,17 @@ const styles = {
 
 const List = {
   name: 'List',
-  props: ['todos', 'actions'],
+  // props: ['todos', 'actions'],
+  props: {
+    todos: {
+      type: Array,
+      required: true,
+    },
+    actions: {
+      type: Object,
+      required: true,
+    },
+  },
   render(h) {
     return (
       <div style={styles.container}>
