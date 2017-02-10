@@ -1,4 +1,5 @@
-import {connect} from 'vuedux';
+// import {connect} from 'vuedux';
+import {connect} from './../../../../dist/vuedux';
 
 const styles = {
   container: {

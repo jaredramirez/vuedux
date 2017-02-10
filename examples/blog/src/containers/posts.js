@@ -1,4 +1,4 @@
-import {connect} from 'vuedux';
+import {connect} from './../../../../dist/vuedux';
 
 import Post from './post';
 
@@ -13,7 +13,7 @@ const styles = {
 };
 
 const Posts = {
-  name: 'PostContainer',
+  name: 'PostsContainer',
   props: ['postsIds'],
   render(h) {
     return (

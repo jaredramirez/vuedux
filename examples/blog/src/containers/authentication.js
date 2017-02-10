@@ -4,13 +4,13 @@ const authentication = (component) => {
   const wrapper = {
     name: 'AuthenticationWrapper',
     functional: true,
-    // props: ['isLoggedIn'],
-    props: {
-      isLoggedIn: {
-        type: Boolean,
-        required: true,
-      },
-    },
+    props: ['isLoggedIn'],
+    // props: {
+      // isLoggedIn: {
+        // type: Boolean,
+        // required: true,
+      // },
+    // },
     render: (h, {props}) => {
       if (props.isLoggedIn) {
         return component;

@@ -3,7 +3,7 @@
 
 import type {Connect} from './flow-declarations/vuedux';
 import bindContextProperties from './context/bindContextProperties';
-import {normalizeMap} from './utils';
+import {normalizeProps} from './utils';
 
 const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
   (component) => {
@@ -12,7 +12,7 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
     return {
       name: `connect-${component.name}`,
       props: {
-        ...normalizeMap(component.props),
+        ...normalizeProps(component.props),
       },
       data() {
         return {
