@@ -1,6 +1,8 @@
 const path = require('path');
 const webpack = require('webpack'); // eslint-disable-line import/no-extraneous-dependencies
 
+const prod = process.env.NODE_ENV === 'production';
+
 const uglifyConfigProd = {
   sourceMap: true,
   beautify: false,
@@ -26,6 +28,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'vuedux.js',
+    sourceMapFilename: 'vuedux.js.map',
     library: 'vuedux',
     libraryTarget: 'umd',
   },
@@ -40,9 +43,7 @@ module.exports = {
   },
   plugins: [
     new webpack.optimize.UglifyJsPlugin(
-        process.env.NODE_ENV === 'production'
-        ? uglifyConfigProd
-        : uglifyConfigDev
+        prod ? uglifyConfigProd : uglifyConfigDev
     ),
   ],
   devtool: 'source-map',

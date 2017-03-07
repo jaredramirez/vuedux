@@ -1,23 +1,21 @@
 // @flow
-// import {inject} from 'vue-expose-inject';
-
-import type {Connect} from './flow-declarations/vuedux';
-import bindContextProperties from './context/bindContextProperties';
+import type {ConnectCreator} from './flow-declarations/vuedux';
 import {normalizeProps} from './utils';
 
-const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
+const connectCreator: ConnectCreator = (mapDispatchToProps, mapStateToProps) =>
   (component) => {
     const shouldHandleState = Boolean(mapStateToProps);
 
     return {
       name: `connect-${component.name}`,
-      props: {
-        ...normalizeProps(component.props),
-      },
+      inject: ['store'],
       data() {
         return {
           state: null,
         };
+      },
+      props: {
+        ...normalizeProps(component.props),
       },
       render(h) {
         return h(component, {
@@ -29,7 +27,6 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
         });
       },
       computed: {
-        ...bindContextProperties(['store']),
         stateToProps() {
           return mapStateToProps
             ? mapStateToProps(this.state, this.$options.propsData)
@@ -63,4 +60,4 @@ const connect: Connect = (mapDispatchToProps, mapStateToProps) =>
     };
   };
 
-export default connect;
+export default connectCreator;

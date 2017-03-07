@@ -16,7 +16,7 @@
     "test:watch": "node_modules/.bin/jest --watch",
     "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
-    "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p --env.option abc",
+    "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
   "devDependencies": {
@@ -42,7 +42,7 @@
   },
   "peerDependencies": {
     "redux": "^3.6.0",
-    "vue": "^2.1.10"
+    "vue": "^2.2.10"
   },
   "repository": {
     "type": "git",

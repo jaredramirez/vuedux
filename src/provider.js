@@ -1,9 +1,13 @@
 // @flow
 import type {Component} from './flow-declarations/vue';
-import Context from './context';
 
 const Provider: Component = {
   name: 'Provider',
+  provide() {
+    return {
+      store: this.store,
+    };
+  },
   props: {
     store: {
       type: Object,
@@ -17,18 +21,7 @@ const Provider: Component = {
     if (this.$slots.default.length !== 1) {
       throw new Error('Provider should have one child!');
     }
-    return (
-      <Context properties={this.context()}>
-        {this.$slots.default[0]}
-      </Context>
-    );
-  },
-  methods: {
-    context() {
-      return {
-        store: this.store,
-      };
-    },
+    return this.$slots.default[0];
   },
 };
 
