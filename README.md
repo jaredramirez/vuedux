@@ -12,7 +12,7 @@ npm i --save vuedux
 ```
 
 ### Examples
-* [Todos With JSX](examples/todos-jsx)
+* [Todos with JSX](examples/todos-jsx)
 * [Todos](examples/todos)
 
 ### API
