@@ -12,8 +12,6 @@
   ],
   "scripts": {
     "lint": "node_modules/.bin/eslint index.js src/*.js",
-    "test": "node_modules/.bin/jest",
-    "test:watch": "node_modules/.bin/jest --watch",
     "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
     "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
@@ -34,10 +32,6 @@
     "eslint-plugin-import": "^1.16.0",
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
-    "jest": "^18.1.0",
-    "redux": "^3.6.0",
-    "redux-mock-store": "^1.2.2",
-    "vue": "^2.3.2",
     "webpack": "^2.2.0-rc"
   },
   "peerDependencies": {
