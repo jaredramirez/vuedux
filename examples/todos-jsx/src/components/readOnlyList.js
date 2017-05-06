@@ -9,12 +9,13 @@ const styles = {
 
 const ReadOnlyList = {
   name: 'ReadOnlyList',
+  functional: true,
   props: ['title', 'todos'],
-  render(h) {
+  render(h, {props}) {
     return (
       <div style={styles.container}>
-        <h3>{this.title}</h3>
-        {this.todos.map((todo, key) => <span key={key}>{todo.text}</span>)}
+        <h3>{props.title}</h3>
+        {props.todos.map((todo, key) => <span key={key}>{todo.text}</span>)}
       </div>
     );
   },
@@ -24,4 +25,4 @@ const mapStateToProps = state => ({
   todos: state.todos,
 });
 
-export default connect(null, mapStateToProps)(ReadOnlyList);
+export default connect(mapStateToProps)(ReadOnlyList);

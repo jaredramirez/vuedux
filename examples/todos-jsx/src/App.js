@@ -16,7 +16,7 @@ const App = {
   funcional: true,
   render: h =>
     <div style={styles.container}>
-      <List />
+      <List title={'Editable list'} />
       <ReadOnlyList title='Read Only List' />
     </div>,
 };

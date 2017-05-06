@@ -22,22 +22,19 @@ const styles = {
 
 const List = {
   name: 'List',
-  // props: ['todos', 'actions'],
   props: {
-    todos: {
-      type: Array,
+    title: {
+      type: String,
       required: true,
     },
-    actions: {
-      type: Object,
-      required: true,
-    },
+    todos: Array,
+    actions: Object,
   },
   render(h) {
     return (
       <div style={styles.container}>
         <div style={styles.sub}>
-          <h3 style={{marginRight: '15px'}}>List</h3>
+          <h3 style={{marginRight: '15px'}}>{this.title}</h3>
           <input
             type='button'
             value='add'
@@ -50,13 +47,12 @@ const List = {
   },
 };
 
+const mapStateToProps = state => ({
+  todos: state.todos,
+});
 const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(todosActionCreators, dispatch),
 });
 
-const mapStateToProps = state => ({
-  todos: state.todos,
-});
-
-export default connect(mapDispatchToProps, mapStateToProps)(List);
+export default connect(mapStateToProps, mapDispatchToProps)(List);
 
