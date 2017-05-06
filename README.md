@@ -25,3 +25,8 @@ npm i --save vuedux
 ### License
 [MIT](https://opensource.org/licenses/MIT)
 
+### BREAKING CHANGES:
+
+* v0.0.10
+  * Flipped order of `connect` arguments, `mapStateToProps` is now first followed by `mapDispatchToProps`
+
