@@ -1,22 +1,36 @@
 ## API
 
 <a name="provider"></a>
-### `Provider`
+### `<Provider store>`
 Component to wrap around the root of you app. Has a single prop of your applications `store`
 
-Common Usage:
-```
-<template>
-  <provider v-bind:store="store">
-    // other components that use `connect
-  </provider>
-</template>
-```
+
 Common Usage with JSX:
 ```
 <Provider store={store}>
   <App />
 </Provider>
+```
+Common Usage with templates:
+```
+<template>
+  <provider v-bind:store="store">
+    <app />
+  </provider>
+</template>
+
+<script>
+export default {
+  name: 'Root',
+  funcional: true,
+  components: {Provider},
+  data() {
+    return {
+      store,
+    };
+  },
+};
+</script>
 ```
 
 <a name="connect"></a>
@@ -27,7 +41,6 @@ Function to connect a component to the redux store.
 * `mapStateToProps(state, ownProps): mappedPropsObject`
   *Optional* Provides the current state and the wrapped components props as arguements.
   *Returns* An plain javascript object to be returned that will be applied a props to the wrapped component.
-  Common usage:
   ```
   const mapStateToProps = state => ({
     todos: state.todos,
