@@ -17,7 +17,8 @@ const connectCreator: ConnectCreator = (mapStateToProps, mapDispatchToProps) =>
         ...this.$options.propsData,
         ...this.stateToProps,
         ...this.dispatchToProps,
-        },
+      },
+      scopedSlots: this.$scopedSlots
       }, this.$slots.default);
     },
     computed: {
