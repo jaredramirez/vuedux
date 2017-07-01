@@ -12,13 +12,13 @@ const connectCreator: ConnectCreator = (mapStateToProps, mapDispatchToProps) =>
     }),
     props: {...normalizeProps(component.props)},
     render(h) {
-    return h(component, {
-      props: {
-        ...this.$options.propsData,
-        ...this.stateToProps,
-        ...this.dispatchToProps,
-      },
-      scopedSlots: this.$scopedSlots
+      return h(component, {
+        props: {
+          ...this.$options.propsData,
+          ...this.stateToProps,
+          ...this.dispatchToProps,
+        },
+        scopedSlots: this.$scopedSlots,
       }, this.$slots.default);
     },
     computed: {
