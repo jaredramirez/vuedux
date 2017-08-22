@@ -26,7 +26,6 @@ import {Provider} from 'vuedux';
 
 export default {
   name: 'Root',
-  functional: true,
   components: {Provider},
   data() {
     return {

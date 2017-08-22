@@ -26,7 +26,6 @@ const mapDispatchToProps = dispatch => ({
 
 const App = {
   name: 'App',
-  funcional: true,
   components: {
     Provider,
     List: connect(mapStateToProps, mapDispatchToProps)(List),

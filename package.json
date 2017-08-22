@@ -9,12 +9,15 @@
   "scripts": {
     "lint": "node_modules/.bin/eslint index.js src/*.js",
     "lint:test": "node_modules/.bin/eslint -c \"test/.eslintrc.js\" test/*.js",
+    "test": "./node_modules/.bin/jest --silent",
+    "test:watch": "./node_modules/.bin/jest --watch --silent",
     "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
     "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
   "devDependencies": {
+    "avoriaz": "^3.4.0",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-helper-vue-jsx-merge-props": "^2.0.2",
@@ -30,7 +33,12 @@
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
     "jest": "^20.0.4",
-    "redux-mock-store": "^1.2.2",
+    "jest-vue-preprocessor": "^1.1.0",
+    "redux": "^3.7.2",
+    "sinon": "^3.2.1",
+    "vue": "^2.4.2",
+    "vue-template-compiler": "^2.4.2",
+    "vue-template-es2015-compiler": "^1.5.3",
     "webpack": "^2.2.0-rc"
   },
   "peerDependencies": {
@@ -41,5 +49,12 @@
     "type": "git",
     "url": "git+https://github.com/jaredramirez/vuedux.git"
   },
-  "keywords": ["vue", "redux", "bindings", "react-redux"]
+  "keywords": ["vue", "redux", "bindings", "react-redux"],
+  "jest": {
+    "moduleFileExtensions": ["js", "vue"],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
+    }
+  }
 }

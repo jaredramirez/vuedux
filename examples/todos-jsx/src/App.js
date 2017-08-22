@@ -13,11 +13,11 @@ const styles = {
 
 const App = {
   name: 'App',
-  funcional: true,
+  functional: true,
   render: h =>
     <div style={styles.container}>
       <List title={'Editable list'} />
-      <ReadOnlyList title='Read Only List' />
+      <ReadOnlyList title="Read Only List" />
     </div>,
 };
 
