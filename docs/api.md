@@ -7,6 +7,8 @@ Component to wrap around the root of you app. Has a single prop of your applicat
 
 Common Usage with JSX:
 ```
+import {Provider} from 'vuedux';
+...
 <Provider store={store}>
   <App />
 </Provider>
@@ -20,9 +22,11 @@ Common Usage with templates:
 </template>
 
 <script>
+import {Provider} from 'vuedux';
+
 export default {
   name: 'Root',
-  funcional: true,
+  functional: true,
   components: {Provider},
   data() {
     return {
