@@ -13,6 +13,7 @@ const connectCreator: ConnectCreator = (mapStateToProps, mapDispatchToProps) =>
     props: {...normalizeProps(component.props)},
     render(h) {
       return h(component, {
+        on: this._events,
         props: {
           ...this.$options.propsData,
           ...this.stateToProps,
