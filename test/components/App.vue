@@ -1,7 +1,7 @@
 <template>
   <provider v-bind:store="store">
     <div id="child">
-      <counter id="counter" />
+      <counter v-bind="{skip}" id="counter" />
     </div>
   </provider>
 </template>
@@ -27,6 +27,7 @@ const App = {
   },
   data() {
     return {
+      skip: 0,
       store,
     };
   },

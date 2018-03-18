@@ -15,7 +15,7 @@ const connectCreator: ConnectCreator = (mapStateToProps, mapDispatchToProps) =>
       return h(component, {
         on: this._events,
         props: {
-          ...this.$options.propsData,
+          ...this.$props,
           ...this.stateToProps,
           ...this.dispatchToProps,
         },

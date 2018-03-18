@@ -36,6 +36,21 @@ describe('App', () => {
       expect(counterElem.vm.$props.actions.increment).toBeDefined();
     });
 
+    it('should pass in own props and retain reactivity', async () => {
+      const wrapper = mount(App);
+
+      wrapper.find('#button-increment')[0].trigger('click');
+      wrapper.find('#button-increment')[0].trigger('click');
+
+      await Vue.nextTick();
+
+      wrapper.vm.skip = 2;
+
+      await Vue.nextTick();
+
+      expect(wrapper.find('#count')[0].text()).toBe('5');
+    });
+
     it('should have props.count in span element equal store value', () => {
       const spanElem = mount(App).find('#count')[0];
       const storeCount = store.getState().count;
