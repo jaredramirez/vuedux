@@ -42,7 +42,7 @@ describe('App', () => {
       expect(spanElem.text()).toBe(storeCount.toString());
     });
 
-    it('should have props.count equal store value after actions', () => {
+    it('should have props.count equal store value after actions', async () => {
       const wrapper = mount(App);
       const childElem = wrapper.find(Counter)[0];
 
@@ -50,10 +50,9 @@ describe('App', () => {
       wrapper.find('#button-increment')[0].trigger('click');
       wrapper.find('#button-decrement')[0].trigger('click');
 
-      Vue.nextTick(() => {
-        const storeCount = store.getState().count;
-        expect(childElem.vm.$props.count).toBe(storeCount);
-      });
+      await Vue.nextTick();
+      const storeCount = store.getState().count;
+      expect(childElem.vm.$props.count).toBe(storeCount);
     });
   });
 });
