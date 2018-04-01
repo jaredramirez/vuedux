@@ -61,12 +61,15 @@ describe('App', () => {
       const wrapper = mount(App);
       const childElem = wrapper.find(Counter)[0];
 
-      wrapper.find('#button-increment')[0].trigger('click');
-      wrapper.find('#button-increment')[0].trigger('click');
-      wrapper.find('#button-decrement')[0].trigger('click');
+      const num = 4;
+      for (let i = 0; i < 4; i += 1) {
+        wrapper.find('#button-increment')[0].trigger('click');
+      }
 
       await Vue.nextTick();
+
       const storeCount = store.getState().count;
+      expect(storeCount).toBe(num);
       expect(childElem.vm.$props.count).toBe(storeCount);
     });
   });

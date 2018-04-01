@@ -15,14 +15,16 @@ const Counter = {
   name: 'Counter',
   props: ['count', 'actions', 'skip'],
   computed: {
-    countWithSkip () {
+    countWithSkip() {
       const skip = this.skip || 0;
 
-      return Array.from(Array(this.count).keys())
-        .reduce((sum, next) => sum + next + skip, 0)
-    }
-  }
-}
+      return Array.from(Array(this.count).keys()).reduce(
+        (sum, next) => sum + next + skip,
+        0,
+      );
+    },
+  },
+};
 
 export default Counter;
 </script>
