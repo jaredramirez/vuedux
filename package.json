@@ -1,15 +1,11 @@
 {
   "name": "vuedux",
-  "version": "0.0.12",
+  "version": "1.0.0",
   "description": "Redux bindings for Vue.js, inspired by React-Redux.",
   "author": "jaredramirez <jaredramirez@me.com>",
   "license": "MIT",
   "main": "dist/vuedux.js",
-  "files": [
-    "dist/vuedux.js",
-    "dist/vuedux.js.map",
-    "src"
-  ],
+  "files": ["dist/vuedux.js", "dist/vuedux.js.map", "src"],
   "scripts": {
     "lint": "node_modules/.bin/eslint index.js src/*.js",
     "lint:test": "node_modules/.bin/eslint -c \"test/.eslintrc.js\" test/*.js",
@@ -17,7 +13,8 @@
     "test:watch": "./node_modules/.bin/jest --watch --silent",
     "build": "node_modules/.bin/webpack --progress --colors",
     "build:watch": "node_modules/.bin/webpack --progress --colors --watch",
-    "build:prod": "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
+    "build:prod":
+      "NODE_ENV=production node_modules/.bin/webpack --progress --colors -p",
     "bump": "yarn version --no-git-tag-version --new-version patch"
   },
   "devDependencies": {
@@ -53,17 +50,9 @@
     "type": "git",
     "url": "git+https://github.com/jaredramirez/vuedux.git"
   },
-  "keywords": [
-    "vue",
-    "redux",
-    "bindings",
-    "react-redux"
-  ],
+  "keywords": ["vue", "redux", "bindings", "react-redux"],
   "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "vue"
-    ],
+    "moduleFileExtensions": ["js", "vue"],
     "transform": {
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue-preprocessor"
